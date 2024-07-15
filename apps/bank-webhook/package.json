@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "esbuild index.ts --bundle --outfile=dist/index.js && node dist/index.js"
+    "dev": "esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node && node dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +12,9 @@
   "dependencies": {
     "@repo/db": "*",
     "@types/express": "^4.17.21",
-    "esbuild": "^0.23.0",
     "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.23.0"
   }
 }

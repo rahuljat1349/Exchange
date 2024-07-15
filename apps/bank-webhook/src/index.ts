@@ -3,7 +3,7 @@ import db from "@repo/db/client";
 
 const app = express();
 
-app.post("/", async (req, res) => {
+app.post("/bank", async (req, res) => {
   // TODO : add zod validation
   const paymentInformation = {
     token: req.body.token,
@@ -40,7 +40,9 @@ app.post("/", async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(411).json({
-        message:"error while processing webhook"
-    })
+      message: "error while processing webhook",
+    });
   }
 });
+
+app.listen(3002, () => console.log("listening to port 3002"));
